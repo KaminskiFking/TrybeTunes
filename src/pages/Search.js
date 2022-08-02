@@ -76,14 +76,12 @@ class Search extends Component {
         {album.length < 1
           ? <p>Nenhum álbum foi encontrado</p> : album.map((element, index) => (
             <div key={ index }>
-              { element.artistId }
-              { element.artistName }
-              { element.collectionId }
-              { element.collectionName }
-              { element.collectionPrice }
-              { element.artworkUrl100 }
-              { element.releaseDate }
-              { element.trackCount }
+              <img src={ element.artworkUrl100 } alt={ element.collectionName } />
+              <br />
+              <span>{element.collectionName}</span>
+              <br />
+              <span>{element.collectionPrice}</span>
+              <br />
               <Link
                 to={ `/album/${element.collectionId}` }
                 data-testid={ `link-to-album-${element.collectionId}` }
@@ -91,6 +89,8 @@ class Search extends Component {
                 Album Link
               </Link>
             </div>))}
+        <br />
+        <br />
         {nameArtist}
       </div>
     );
