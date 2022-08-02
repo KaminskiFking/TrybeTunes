@@ -3,18 +3,31 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Loading from './Loading';
 
 class Album extends Component {
   constructor() {
     super();
     this.state = {
       music: [],
+      favoriteMusic: [],
       artistName: '',
       albumName: '',
+      loading: '',
     };
   }
 
   async componentDidMount() {
+    this.setState({
+      loading: true,
+    });
+    const testTwo = await getFavoriteSongs();
+    console.log(testTwo);
+    this.setState({
+      loading: false,
+      favoriteMusic: testTwo,
+    });
     const { match: { params: { id } } } = this.props;
     const test = await getMusics(id);
     this.setState({
@@ -25,8 +38,8 @@ class Album extends Component {
   }
 
   render() {
-    const { music, artistName, albumName } = this.state;
-    console.log(music);
+    const { music, artistName, albumName, loading, favoriteMusic } = this.state;
+    if (loading) return <Loading />;
     return (
       <div data-testid="page-album">
         <Header />
@@ -38,6 +51,7 @@ class Album extends Component {
             trackName={ element.trackName }
             previewUrl={ element.previewUrl }
             trackId={ element.trackId }
+            checkedFavorites={ favoriteMusic }
           />
         ))}
       </div>

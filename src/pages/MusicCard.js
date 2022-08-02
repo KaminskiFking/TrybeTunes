@@ -12,6 +12,16 @@ class MusicCard extends Component {
     };
   }
 
+  componentDidMount() {
+    const { checkedFavorites, trackId } = this.props;
+    const filterFavorites = checkedFavorites.find(
+      (element) => element.trackId === trackId,
+    );
+    this.setState({
+      checked: filterFavorites,
+    });
+  }
+
   checkSongFavorite = async () => {
     const { trackId } = this.props;
     this.setState({
@@ -57,6 +67,10 @@ MusicCard.propTypes = {
   trackId: PropTypes.number.isRequired,
   songObj: PropTypes.shape({
     artistId: PropTypes.number.isRequired,
+  }).isRequired,
+  checkedFavorites: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+    find: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
