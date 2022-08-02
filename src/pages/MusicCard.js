@@ -13,12 +13,12 @@ class MusicCard extends Component {
   }
 
   checkSongFavorite = async () => {
-    const { songObj } = this.props;
+    const { trackId } = this.props;
     this.setState({
       loading: true,
       checked: true,
     });
-    await addSong(songObj);
+    await addSong(trackId);
     this.setState({
       loading: false,
     });
