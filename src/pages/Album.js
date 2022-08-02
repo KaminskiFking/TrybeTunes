@@ -23,7 +23,6 @@ class Album extends Component {
       loading: true,
     });
     const testTwo = await getFavoriteSongs();
-    console.log(testTwo);
     this.setState({
       loading: false,
       favoriteMusic: testTwo,
