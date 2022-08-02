@@ -36,7 +36,6 @@ class Search extends Component {
       loading: true,
     });
     const test = await searchAlbumsAPI(artistValue);
-    console.log(test);
     this.setState((prevState) => ({
       nameArtist: `Resultado de álbuns de: ${prevState.artistValue}`,
       artistValue: '',
