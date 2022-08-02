@@ -50,7 +50,7 @@ class Login extends Component {
             alt="fone"
           />
           <form className="formulario">
-            Login
+            login
             <label htmlFor="nameLogin">
               <input
                 name="nameLogin"
