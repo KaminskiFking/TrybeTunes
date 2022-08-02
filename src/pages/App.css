@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+}
+
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  max-width: 3000px;
+  height: 1000px;
+  background-color: blueviolet;
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  padding: 12px;
+  text-align: center;
+  border: 5px solid rgb(75, 0, 105);
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  
+}
+
+.header-tunes {
+  background-color: rgb(65, 65, 65);
+  max-width: 100%;
+  color: rgb(132, 255, 159);
+  height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-name {
+  background-image: url("https://kendis.io/wp-content/uploads/2018/07/Spotify-Kendis-Agile-Scaling.jpg");
+  border: 2px solid #333;
+  background-color: rgb(64, 14, 105);
+  border-radius: 0.25rem;
+  display: flex;
+  max-width: 500px;
+  justify-content: center;
+  
+}
+
+.imagem-fone {
+  width: 100px;
+  background-color: rgb(139, 255, 191);
+}
+
+.formulario {
+  display: flex;
+  max-width: min-content;
+  flex-direction: column;
+}

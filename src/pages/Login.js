@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import './App.css';
 
 class Login extends Component {
   constructor() {
@@ -41,27 +42,34 @@ class Login extends Component {
     const { nameText, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-login">
-        Login
-        <form>
-          <label htmlFor="nameLogin">
-            <input
-              name="nameLogin"
-              value={ nameText }
-              data-testid="login-name-input"
-              type="text"
-              onChange={ this.onChange }
-            />
-          </label>
-          <button
-            data-testid="login-submit-button"
-            type="submit"
-            disabled={ this.loginLength() }
-            onClick={ this.apiLoading }
-          >
-            Entrar
-          </button>
-        </form>
+      <div data-testid="page-login" className="form-login">
+        <div className="login-name">
+          <img
+            className="imagem-fone"
+            src="https://cdn-icons-png.flaticon.com/512/1563/1563475.png"
+            alt="fone"
+          />
+          <form className="formulario">
+            Login
+            <label htmlFor="nameLogin">
+              <input
+                name="nameLogin"
+                value={ nameText }
+                data-testid="login-name-input"
+                type="text"
+                onChange={ this.onChange }
+              />
+            </label>
+            <button
+              data-testid="login-submit-button"
+              type="submit"
+              disabled={ this.loginLength() }
+              onClick={ this.apiLoading }
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
